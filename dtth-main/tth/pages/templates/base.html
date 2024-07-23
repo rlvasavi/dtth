@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>HomePage</title>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+<style>
+.column {
+  float: left;
+  width: 32%;
+  padding: 0 10px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+h3 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+body {
+
+  background: rgb(0,212,255);
+  background: linear-gradient(45deg, rgba(0,212,255,1) 0%, rgba(11,3,45,1) 100%);
+  background-image: url(https://images.unsplash.com/photo-1619204715997-1367fe5812f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1889&q=80);
+  background-size: cover;
+  background-position: center;
+}
+.container {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.25);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  padding: 20px;
+  filter: drop-shadow(0 30px 10px rgba(0,0,0,0.125));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  text-align: center;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+h1{
+  font-family: 'Righteous', sans-serif;
+  color: rgba(255,255,255,0.98);
+  text-transform: uppercase;
+  font-size: 2.4rem;
+}
+
+p {
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 150%;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.button-wrapper{
+  margin-top: 18px;
+}
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:300);
+.btn {
+  border: none;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-size: 12px;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.btn + .btn {
+  margin-left: 10px;
+}
+
+.outline {
+  background: transparent;
+  color: rgba(0, 212, 255, 0.9);
+  border: 1px solid rgba(0, 212, 255, 0.6);
+  transition: all .3s ease;
+
+}
+
+.outline:hover{
+  transform: scale(1.125);
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.9);
+  transition: all .3s ease;
+}
+
+.fill {
+  background: rgba(0, 212, 255, 0.9);
+  color: rgba(255,255,255,0.95);
+  filter: drop-shadow(0);
+  font-weight: bold;
+  transition: all .3s ease;
+}
+
+.fill:hover{
+  transform: scale(1.125);
+  border-color: rgba(255, 255, 255, 0.9);
+  filter: drop-shadow(0 10px 5px rgba(0,0,0,0.125));
+  transition: all .3s ease;
+}
+    .footer {
+      height: 700px;
+    }
+}
+
+/* Sticky footer style and color
+-------------------------------------------------- */
+footer {
+  padding-top: 20px;
+  background-color: #fff;
+  color: #bbb;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 150px;
+}
+
+footer a {
+  color: #999;
+  text-decoration:none;
+}
+
+footer a:hover, footer a:focus {
+  color: #aaa;
+  text-decoration:none;
+  border-bottom:1px dotted #999;
+}
+
+footer .form-control {
+    background-color: #fff;
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+    border: none;
+    resize: none;
+    color: #d1d2d2;
+    padding: 0.7em 1em;
+}
+.social-media-links {
+  text-align: center;
+}
+
+.social-media-icon {
+  display: inline-block;
+  margin: 0 10px;
+  color: #A9A9A9;
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+.social-media-icon:hover {
+  color: #F5F5DC;
+}
+</style>
+<div >
+    <header>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background: linear-gradient(to right,#ddd6f3 , #faaca8);>
+  <a class="navbar-brand" href="#">Rivora</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/search-flights">Travel</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/tour">Tour</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/rooms">Hospitality</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/aboutus">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact Us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    </header>
+</div>
+<hr>
+
+<main>
+  <div class="column">
+  <div class="container">
+ <div class="wrapper">
+    <img src="https://cdn.pixabay.com/photo/2016/01/09/18/27/camera-1130731__340.jpg"
+         alt="Travel" height="310" width="300">
+   <h1> Travel</h1>
+   <p>Book your flights,bus,train tickets here</p>
+  </div>
+  <div class="button-wrapper">
+      <form action="/search-flights">
+    <button class="btn fill">View More</button></form>
+  </div>
+    </div></div>
+
+ <div class="column">
+  <div class="container">
+ <div class="wrapper">
+   <img src="https://images.unsplash.com/photo-1617018681623-987895ca1c99?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHRvdXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+         alt="Tour" height="310" width="300">
+   <h1> Tour</h1>
+   <p>Book your Tour to Destination here</p>
+  </div>
+  <div class="button-wrapper">
+      <form action="/tour">
+    <button class="btn fill" type="submit">View More</button>
+          </form>
+  </div>
+  </div></div>
+
+ <div class="column">
+  <div class="container">
+ <div class="wrapper">
+   <img src="https://media.istockphoto.com/id/591821200/photo/3d-rendering-luxury-hotel-reception-and-lounge.jpg?s=612x612&w=0&k=20&c=ujKL3aloZrbd87Q8fI8L6vTGJ_eAmfipVGxak-c4RTc="
+         alt="Hospitality" height="310" width="300">
+   <h1> Hospitality</h1>
+   <p>Book your Hotel Stay here</p>
+  </div>
+  <div class="button-wrapper">
+      <form action="/rooms">
+    <button class="btn fill">View More</button>
+          </form>
+  </div>
+    </div>
+ </div><br>
+
+<hr>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h5><i class="fa fa-road"></i>Links</h5>
+                <div class="row">
+                    <div class="col-6">
+                        <ul class="list-unstyled">
+                            <li><a href="/search-flights">Travel</a></li>
+                            <li><a href="/tour">Tour</a></li>
+                            <li><a href="/rooms">Hospitality</a></li>
+                            <li><a href="/aboutus">AboutUs</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+              <hr>
+            </div>
+
+            <div class="col-md-5">
+                <form style="margin: 0 auto;
+  display: block;text-align: center;" action="/contact">
+
+                    <fieldset class="form-group text-xs-right">
+                        <button style=" top:80%; background-color:#0a0a23; color: #fff;
+                            border:none;  border-radius:10px;">Contact US</button>
+                    </fieldset>
+                </form>
+                 <div class="social-media-links">
+    <a href="https://www.facebook.com/example" target="_blank" class="social-media-icon">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.twitter.com/example" target="_blank" class="social-media-icon">
+      <i class="fab fa-twitter"></i>
+    </a>
+    <a href="https://www.instagram.com/example" target="_blank" class="social-media-icon">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>
+

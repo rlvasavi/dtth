@@ -1,0 +1,11 @@
+<head>
+    <title>Contact Us</title>
+</head>
+<body>
+    <h2>Contact Us</h2>
+    <form method="post" action="{% url 'contact_us' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</body>

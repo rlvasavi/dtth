@@ -1,0 +1,62 @@
+  <center><h1>Available Tours</h1></center>
+
+  {% for tour in tours %}
+<div class="cards">
+  <div class="card">
+  <div class="container">
+    <h2>{{ tour.name }}</h2>
+    <p>{{ tour.description }}</p>
+    <p>Price: {{ tour.price }}</p>
+    <hr>
+    <button class="button button5">
+    <a href="{% url 'book_tour' tour.id %}">Book Now</a></button>
+     </div>
+</div>
+  </div>
+  {% endfor %}
+
+
+<style>
+.cards {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+  .card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 25%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 9px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button5 {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+.button5:hover {
+  background-color: #555555;
+  color: white;
+}
+</style>

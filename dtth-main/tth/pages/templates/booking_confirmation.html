@@ -1,0 +1,11 @@
+<h1>Booking Confirmation</h1>
+  <p>Thank you for booking {{ booking.tour.name }}!</p>
+  <p>Your booking details:</p>
+  <ul>
+    <li>Tour Name: {{ booking.tour.name }}</li>
+    <li>Booking Date: {{ booking.date }}</li>
+    <li>Number of People: {{ booking.num_people }}</li>
+    <li>Contact Name: {{ booking.customer.name }}</li>
+    <li>Contact Email: {{ booking.customer.email }}</li>
+    <li>Contact Phone: {{ booking.customer.phone }}</li>
+  </ul>

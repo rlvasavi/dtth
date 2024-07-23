@@ -1,0 +1,23 @@
+ <style>
+       .box{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+	border-radius:3px;
+	padding:50px 100px;
+	background-color:rgba(255, 35, 82, 0.2);
+
+}
+ </style>
+<div class="box">
+  <h1>All Flights</h1>
+  <ul>
+   <strong> {% for flight in flights %}
+      <li>Flight  {{ flight.origin }} to {{ flight.destination }} on {{ flight.date }}</li>
+    {% empty %}
+      <p>No flights found</p>
+    {% endfor %}
+    </strong>
+  </ul>
+</div>

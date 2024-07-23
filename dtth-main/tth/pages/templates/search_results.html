@@ -1,0 +1,28 @@
+<style>
+    .box{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+	border-radius:3px;
+	padding:50px 100px;
+	background-color:rgba(255, 99, 71, 0.4);
+
+}
+</style>
+
+{% if flights %}
+    <ul>
+    {% for flight in flights %}
+        <div class="box">
+       <h3>  <li>{{ flight }}</li>
+           <hr>
+       Booking Conformed</h3>
+            </div>
+    {% endfor %}
+    </ul>
+{% else %}
+<div class="box">
+   <h2> <p>No flights found.</p></h2>
+    </div>
+{% endif %}
