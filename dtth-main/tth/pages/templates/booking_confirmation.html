@@ -1,11 +1,63 @@
-<h1>Booking Confirmation</h1>
-  <p>Thank you for booking {{ booking.tour.name }}!</p>
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #c9ffbf, #ffafbd);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirm-box {
+    background: #ffffff;
+    padding: 40px 60px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+}
+
+h1 {
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+li {
+    background: #f7f7f7;
+    margin: 10px 0;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 16px;
+    color: #555;
+}
+</style>
+
+<div class="confirm-box">
+  <h1>Booking Confirmation</h1>
+  <p>Thank you for booking <strong>{{ booking.tour.name }}</strong>!</p>
   <p>Your booking details:</p>
   <ul>
-    <li>Tour Name: {{ booking.tour.name }}</li>
-    <li>Booking Date: {{ booking.date }}</li>
-    <li>Number of People: {{ booking.num_people }}</li>
-    <li>Contact Name: {{ booking.customer.name }}</li>
-    <li>Contact Email: {{ booking.customer.email }}</li>
-    <li>Contact Phone: {{ booking.customer.phone }}</li>
+    <li><strong>Tour Name:</strong> {{ booking.tour.name }}</li>
+    <li><strong>Booking Date:</strong> {{ booking.date }}</li>
+    <li><strong>Number of People:</strong> {{ booking.num_people }}</li>
+    <li><strong>Contact Name:</strong> {{ booking.customer.name }}</li>
+    <li><strong>Contact Email:</strong> {{ booking.customer.email }}</li>
+    <li><strong>Contact Phone:</strong> {{ booking.customer.phone }}</li>
   </ul>
+  <h3> To go back <a href="/">Click here</a>
+</div>

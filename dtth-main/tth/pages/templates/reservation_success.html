@@ -1,5 +1,68 @@
- <title>Reservation Successful</title>
-<h1>Reservation Successful</h1>
-    <p>Reservation made for Room: {{ reservation.room }}</p>
-    <p>Start Date: {{ reservation.start_date }}</p>
-    <p>End Date: {{ reservation.end_date }}</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservation Successful</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #dff9fb, #c7ecee);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .success-box {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px 70px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #27ae60; /* Green success color */
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .home-button {
+            margin-top: 20px;
+            display: inline-block;
+            background-color: rgba(0, 0, 0, 0.7); /* Black with transparency */
+            color: white;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="success-box">
+    <h1>Reservation Successful</h1>
+    <p>Reservation made for Room: <strong>{{ reservation.room }}</strong></p>
+    <p>Start Date: <strong>{{ reservation.start_date }}</strong></p>
+    <p>End Date: <strong>{{ reservation.end_date }}</strong></p>
+
+    <a href="/" class="home-button">Back to Home</a>
+</div>
+
+</body>
+</html>

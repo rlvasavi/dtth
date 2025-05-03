@@ -1,78 +1,124 @@
-
 <style>
-    .box{
-	position:absolute;
-	left:50%;
-	top:50%;
-	transform: translate(-50%,-50%);
-	border-radius:3px;
-	padding:50px 100px;
-	background-color:rgba(255, 99, 71, 0.4);
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
 
-}
-.datepicker-toggle {
-  display: inline-block;
-  position: relative;
-  width: 18px;
-  height: 19px;
-}
-.datepicker-toggle-button {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('data:image/svg+xml;base64,...');
-}
-input[type=text] {
-  width: 35%;
-  height: 20%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-}
-.button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-.button5 {
-  background-color: white;
-  color: black;
-  border: 2px solid #555555;
-}
-.button5:hover {
-  background-color: #555555;
-  color: white;
-}
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 40px 60px;
+        border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        width: 400px;
+    }
+
+    h2 {
+        color: #333;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    hr {
+        margin: 20px 0;
+        border: none;
+        height: 2px;
+        background: #4CAF50;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+
+    label {
+        display: block;
+        margin: 10px 0 5px;
+        text-align: left;
+        font-weight: 500;
+        color: #555;
+    }
+
+    input[type="text"],
+    input[type="date"] {
+        width: 100%;
+        padding: 12px 15px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-sizing: border-box;
+        transition: 0.3s;
+    }
+
+    input[type="text"]:focus,
+    input[type="date"]:focus {
+        border-color: #4CAF50;
+        outline: none;
+    }
+
+    .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 14px 28px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 8px 4px;
+        border-radius: 8px;
+        transition: background-color 0.4s, transform 0.2s;
+        cursor: pointer;
+    }
+
+    .button:hover {
+        background-color: #45a049;
+        transform: scale(1.05);
+    }
+
+    .button5 {
+        background-color: white;
+        color: black;
+        border: 2px solid #555;
+    }
+
+    .button5:hover {
+        background-color: #555;
+        color: white;
+    }
 </style>
-<div >
-<div class="box">
-<h2>-Search Flight-</h2><hr>
-<form method="post" action="{% url 'search_flights' %}">
-    {% csrf_token %}
-    <strong><label for="origin">Origin:</label></strong>
-    <input type="text" id="origin" name="origin">
-    <br>
-    <strong><label for="destination">Destination:</label></strong>
-    <input type="text" id="destination" name="destination">
-    <br>
-    <strong><label for="date">Date:</label></strong>
-    <input type="date" id="date" name="date" class="datepicker-input">
-    <br><br>
-    <button type="submit" class="button button5">Search & Book</button>
-</form>
-    <hr>
-    <form action="/all-flights">
-    <button type="submit" class="button button5">View All Flight Details</button>
-</form>
-</div>
+
+<div>
+    <div class="box">
+        <h2>- Search Flight -</h2>
+        <hr>
+        <form method="post" action="{% url 'search_flights' %}">
+            {% csrf_token %}
+            <label for="origin"><strong>Origin:</strong></label>
+            <input type="text" id="origin" name="origin" required>
+
+            <label for="destination"><strong>Destination:</strong></label>
+            <input type="text" id="destination" name="destination" required>
+
+            <label for="date"><strong>Date:</strong></label>
+            <input type="date" id="date" name="date" class="datepicker-input" required>
+
+            <button type="submit" class="button">Search & Book</button>
+        </form>
+
+        <hr>
+
+        <form action="/all-flights">
+            <button type="submit" class="button button5">View All Flight Details</button>
+        </form>
+    </div>
 </div>

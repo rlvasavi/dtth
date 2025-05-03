@@ -1,23 +1,62 @@
- <style>
-       .box{
-	position:absolute;
-	left:50%;
-	top:50%;
-	transform: translate(-50%,-50%);
-	border-radius:3px;
-	padding:50px 100px;
-	background-color:rgba(255, 35, 82, 0.2);
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        background: url('https://images.trvl-media.com/media/content/expus/graphics/launch/home/tvly/150324_flights-hero-image_1330x742.jpg') no-repeat center center fixed;
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-}
- </style>
+    .box {
+        background-color: rgba(255, 255, 255, 0.85);
+        padding: 40px 60px;
+        border-radius: 15px;
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        width: 90%;
+        max-width: 700px;
+    }
+
+    h1 {
+        color: #ff2352;
+        margin-bottom: 20px;
+        font-size: 36px;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        font-size: 20px;
+        color: #333;
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    li:last-child {
+        border-bottom: none;
+    }
+
+    p {
+        font-size: 22px;
+        color: #777;
+    }
+</style>
+
 <div class="box">
   <h1>All Flights</h1>
   <ul>
-   <strong> {% for flight in flights %}
-      <li>Flight  {{ flight.origin }} to {{ flight.destination }} on {{ flight.date }}</li>
+    {% for flight in flights %}
+      <li><strong>Flight:</strong> {{ flight.origin }} ➔ {{ flight.destination }} on {{ flight.date }}</li>
     {% empty %}
-      <p>No flights found</p>
+      <p>No flights found.</p>
     {% endfor %}
-    </strong>
   </ul>
+  <h3> To go back <a href="/">Click here</a> </h3>
 </div>

@@ -1,28 +1,81 @@
 <style>
-    .box{
-	position:absolute;
-	left:50%;
-	top:50%;
-	transform: translate(-50%,-50%);
-	border-radius:3px;
-	padding:50px 100px;
-	background-color:rgba(255, 99, 71, 0.4);
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(to right, #ffecd2, #fcb69f);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-}
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        padding: 20px;
+    }
+
+    .box {
+        background: rgba(255, 99, 71, 0.2);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 30px 50px;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        margin: 20px auto;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .box:hover {
+        transform: scale(1.05);
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        font-size: 22px;
+        color: #e94e77;
+        margin-top: 15px;
+    }
+
+    h2 {
+        font-size: 28px;
+        color: #555;
+    }
+
+    hr {
+        margin: 10px 0;
+        border: 0;
+        border-top: 2px solid #e94e77;
+        width: 60%;
+    }
 </style>
 
-{% if flights %}
-    <ul>
-    {% for flight in flights %}
+<div class="container">
+    {% if flights %}
+        <ul>
+            {% for flight in flights %}
+                <div class="box">
+                    <li>{{ flight }}</li>
+                    <hr>
+                    <h3>Booking Confirmed</h3>
+                    <h3> to go back <a href="/">Click here</a></h3>
+                </div>
+            {% endfor %}
+        </ul>
+    {% else %}
         <div class="box">
-       <h3>  <li>{{ flight }}</li>
-           <hr>
-       Booking Conformed</h3>
-            </div>
-    {% endfor %}
-    </ul>
-{% else %}
-<div class="box">
-   <h2> <p>No flights found.</p></h2>
-    </div>
-{% endif %}
+            <h2>No flights found.</h2>
+        </div>
+    {% endif %}
+</div>

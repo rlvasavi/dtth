@@ -1,10 +1,84 @@
-<title>Make Reservation</title>
-<h1>Make Reservation for {{ room.name }}</h1>
-<form method="post" action="{% url 'make_reservation' room.id %}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Make Reservation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://media.istockphoto.com/id/1318363878/photo/luxury-modern-bedroom-interior-at-night.jpg?s=612x612&w=0&k=20&c=riYXhwiUWYzqv7iA060mb14a5b7QdjZhUeqoyNoyyts=') no-repeat center center/cover;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .reservation-box {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px 60px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            text-align: center;
+            width: 400px;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: rgba(0, 0, 0, 0.7); /* Black transparent */
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: rgba(0, 0, 0, 0.9); /* Darker on hover */
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body>
+
+<div class="reservation-box">
+    <h1>Make Reservation for {{ room.name }}</h1>
+    <form method="post" action="{% url 'make_reservation' room.id %}">
         {% csrf_token %}
         <label for="start_date">Start Date:</label>
-        <input type="date" id="start_date" name="start_date" required><br><br>
+        <input type="date" id="start_date" name="start_date" required>
+
         <label for="end_date">End Date:</label>
-        <input type="date" id="end_date" name="end_date" required><br><br>
+        <input type="date" id="end_date" name="end_date" required>
+
         <input type="submit" value="Submit">
     </form>
+</div>
+
+</body>
+</html>
